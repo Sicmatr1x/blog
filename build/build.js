@@ -11,6 +11,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 const fs = require('fs')
+const moment = require('moment')
 
 // Begin to generate markdown map tree file: markdown/index.js
 const markdownScanPath = config.build.root.replace('config', '') + 'markdown'
@@ -25,7 +26,7 @@ function getFileName (myPath) {
   let work = fileName.replace(/-/g, " ")
   return {
     name: work.substring(11, work.length),
-    dateTime: work.substring(0, 10)
+    dateTime: work.substring(0, 10).replace(/ /g, "/")
   }
 }
 

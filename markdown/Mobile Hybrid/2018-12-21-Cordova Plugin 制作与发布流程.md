@@ -240,7 +240,7 @@ nrm add <registry> <url>
 for example:
 
 ```
-nrm add mbc http://10.222.48.153:10011/repository/npm-cordova/
+nrm add mbc http://10.xx.xx.153:10011/repository/npm-cordova/
 ```
 
 查看 NPM 源列表检查是否添加成功:

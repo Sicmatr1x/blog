@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <!-- Menu -->
-    <el-menu :default-active="activeIndex" class="el-menu-vertical-demo" @select="menuDispatcher">
-      <el-menu-item index="1">{{ $root.globalConstant.GITHUB_USERNAME }}'s Blog</el-menu-item>
+    <el-menu :default-active="activeIndex" class="el-menu-vertical-demo" @select="menuDispatcher" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+      <el-menu-item index="1"><i class="el-icon-user-solid"></i>{{ $root.globalConstant.GITHUB_USERNAME }}'s Blog</el-menu-item>
       <el-submenu index="2">
-        <template slot="title">Article List</template>
+        <template slot="title"><i class="el-icon-s-order"></i>Article List</template>
         <TreeMenu :children="items.children"></TreeMenu>
       </el-submenu>
     </el-menu>
@@ -19,7 +19,7 @@ export default {
   components: {TreeMenu},
   data () {
     return {
-      activeIndex: '1',
+      activeIndex: '2',
       items: this.$root.markdownFileTree
     }
   },
